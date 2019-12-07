@@ -20,12 +20,14 @@ class Wire {
     void walk() {
         int x = 0;
         int y = 0;
+        int distance = 0;
 
         for (String instruction : instructions) {
             var direction = instruction.charAt(0);
-            var distance = Integer.valueOf(instruction.substring(1));
+            var travel = Integer.parseInt(instruction.substring(1));
 
-            for (var i = 0; i < distance; i++) {
+            for (var i = 0; i < travel; i++) {
+                distance++;
                 switch (direction) {
                     case 'U':
                         y++;
@@ -41,7 +43,7 @@ class Wire {
                         break;
                 }
 
-                route.add(new Point(x, y));
+                route.add(new Point(x, y, distance));
             }
         }
     }

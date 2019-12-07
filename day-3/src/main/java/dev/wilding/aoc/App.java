@@ -28,8 +28,10 @@ public class App {
             var wireB = new Wire(instructionsB);
 
             var crossedWires = new CrossedWires(wireA, wireB);
-            var result = crossedWires.getManhattanDistanceOfClosestIntersection();
-            System.out.println(result);
+            var resultOne = crossedWires.getManhattanDistanceOfClosestIntersection();
+            System.out.println(resultOne);
+            var resultTwo = crossedWires.getShortestIntersection();
+            System.out.println(resultTwo);
 
         } catch (IOException e) {
             e.printStackTrace();

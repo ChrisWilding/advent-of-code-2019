@@ -4,10 +4,16 @@ class Point implements Comparable<Point> {
 
     private final int x;
     private final int y;
+    private final int distance;
 
-    Point(int x, int y) {
+    Point(int x, int y, int distance) {
         this.x = x;
         this.y = y;
+        this.distance = distance;
+    }
+
+    int getDistance() {
+        return distance;
     }
 
     int getManhattanDistance() {

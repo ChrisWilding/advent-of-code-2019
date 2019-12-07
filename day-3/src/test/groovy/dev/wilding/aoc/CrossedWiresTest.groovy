@@ -12,10 +12,10 @@ class CrossedWiresTest extends Specification {
     def crossedWires = new CrossedWires(wireA, wireB)
 
     when:
-    def result = crossedWires.getManhattanDistanceOfClosestIntersection()
+    def closest = crossedWires.getManhattanDistanceOfClosestIntersection()
 
     then:
-    result == 6
+    closest == 6
   }
 
   def "scenario two"() {
@@ -27,10 +27,12 @@ class CrossedWiresTest extends Specification {
     def crossedWires = new CrossedWires(wireA, wireB)
 
     when:
-    def result = crossedWires.getManhattanDistanceOfClosestIntersection()
+    def closest = crossedWires.getManhattanDistanceOfClosestIntersection()
+    def shortest = crossedWires.getShortestIntersection()
 
     then:
-    result == 159
+    closest == 159
+    shortest == 610
   }
 
   def "scenario three"() {
@@ -42,9 +44,11 @@ class CrossedWiresTest extends Specification {
     def crossedWires = new CrossedWires(wireA, wireB)
 
     when:
-    def result = crossedWires.getManhattanDistanceOfClosestIntersection()
+    def closest = crossedWires.getManhattanDistanceOfClosestIntersection()
+    def shortest = crossedWires.getShortestIntersection()
 
     then:
-    result == 135
+    closest == 135
+    shortest == 410
   }
 }
